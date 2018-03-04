@@ -1,0 +1,12 @@
+clc,clear
+n=58;
+a=textread('¾àÀë¾ØÕóÔ´Êı¾İ.txt');
+a(a==Inf)=0;
+a=a+a'
+a(a==0)=inf;
+a([1:n+1:n^2])=0
+xlswrite('yuanshi.xls',a)
+a=sparse(a);
+d=graphallshortestpaths(a)
+xlswrite('minjuli.xls',d([1:8],[9:43]))
+xlswrite('juli.xls',d)
